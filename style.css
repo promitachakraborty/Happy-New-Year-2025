@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  background: black;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background video */
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Text mask container */
+.text-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 3s ease-in-out;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Ensure SVG elements are non-interactive */
+}
+
+/* Masked video */
+.text-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  /* Constrain video to the mask */
+  mask: url(#text-mask);
+  -webkit-mask: url(#text-mask);
+}
+
+/* Footer Message */
+footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  animation: fadeIn 4s ease-in-out;
+}
+
+/* Particles for interactive background */
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  animation: moveParticles infinite linear;
+  opacity: 0.7;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes moveParticles {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(100vh) scale(0.5);
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy New Year 2025</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <video
+        class="bg-video"
+        src="bg.mp4"
+        autoplay
+        loop
+        muted
+        playsinline
+      ></video>
+
+      <div class="text-container">
+        <svg
+          viewBox="0 0 1200 400"
+          xmlns="http://www.w3.org/2000/svg"
+          class="text-mask"
+        >
+          <defs>
+            <mask id="text-mask">
+              <rect width="100%" height="100%" fill="black" />
+              <text
+                x="50%"
+                y="35%"
+                text-anchor="middle"
+                dy=".35em"
+                font-size="80"
+                fill="white"
+                font-family="Poppins, sans-serif"
+                font-weight="bold"
+              >
+                Happy New Year 2025
+              </text>
+              <text
+                x="50%"
+                y="55%"
+                text-anchor="middle"
+                dy=".35em"
+                font-size="30"
+                fill="white"
+                font-family="Poppins, sans-serif"
+              >
+                Cheers to new beginnings
+              </text>
+              <text
+                x="50%"
+                y="65%"
+                text-anchor="middle"
+                dy=".35em"
+                font-size="20"
+                fill="white"
+                font-family="Poppins, sans-serif"
+              >
+                Let’s make this year the best yet!
+              </text>
+            </mask>
+          </defs>
+
+          <foreignObject x="0" y="0" width="100%" height="100%">
+            <video
+              class="text-video"
+              src="text.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+              style="mask: url(#text-mask); -webkit-mask: url(#text-mask)"
+            ></video>
+          </foreignObject>
+        </svg>
+      </div>
+
+      <footer>
+        <p>Let’s welcome the new year with opportunities and growth! 🚀</p>
+      </footer>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
